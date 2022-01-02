@@ -1,0 +1,62 @@
+@import "abstracts/variables";
+@import "abstracts/mixins";
+
+@import "base/reset";
+@import "base/typography";
+
+@import "components/circle-mouse";
+@import "components/logo";
+@import "components/loading-screen";
+@import "components/space";
+@import "components/navigation";
+@import "components/footer";
+
+@import "layout/grid";
+
+@import "pages/home";
+
+html,
+body {
+  box-sizing: border-box;
+  background: #000;
+  width: 100%;
+  height: 100%;
+}
+
+* {
+  box-sizing: inherit;
+  -webkit-font-smoothing: antialiased;
+  -moz-font-smoothing: antialiased;
+  -o-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+  -webkit-tap-highlight-color: transparent;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+  position: relative;
+  z-index: 1;
+}
+
+h1,
+h2,
+h3,
+p {
+  position: relative;
+  z-index: 1;
+}
+
+.flex-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  svg {
+    width: 80%;
+  }
+}
+
+.app {
+  position: relative;
+}

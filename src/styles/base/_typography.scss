@@ -1,0 +1,26 @@
+.link {
+  font-family: "Raleway", monospace;
+  position: relative;
+  cursor: pointer;
+}
+
+.text {
+  font-family: "Raleway", monospace;
+  font-size: 18px;
+  color: #fff;
+  font-weight: 600;
+  margin-top: 40px;
+  position: relative;
+}
+
+.title {
+  color: #fff;
+  font-family: "Raleway", monospace;
+  letter-spacing: -0.002em;
+  position: relative;
+
+  &.big {
+    font-size: 80px;
+    font-weight: 800;
+  }
+}

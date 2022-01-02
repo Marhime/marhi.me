@@ -1,0 +1,28 @@
+.u {
+  &-grey {
+    color: map-get($colors, "lightGrey");
+  }
+  &-white {
+    color: map-get($colors, "white");
+  }
+  &-black {
+    color: map-get($colors, "black");
+  }
+  &-primary {
+    color: map-get($colors, "primary");
+  }
+  &-light {
+    font-weight: 300;
+  }
+  &-fat {
+    font-weight: 800;
+  }
+
+  &-180 {
+    transform: rotate(-180deg);
+  }
+
+  &-upper {
+    text-transform: uppercase;
+  }
+}

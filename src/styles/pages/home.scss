@@ -1,0 +1,35 @@
+header {
+  position: relative;
+}
+
+a {
+  display: block;
+  position: relative;
+  text-decoration: none;
+}
+
+.main-hero {
+  display: flex;
+  flex-direction: column;
+  gap: 100px;
+
+  .content-left {
+    grid-column: 1/7;
+  }
+  .content-right {
+    grid-column: 8/13;
+    display: flex;
+    gap: 20px;
+    .item {
+      background-color: #fff;
+      width: calc(100% / 3);
+      height: 50vh;
+      transition: 0.4s ease-in-out;
+      border-radius: 10px;
+      outline: 1px solid #fff;
+      &:hover {
+        width: 100%;
+      }
+    }
+  }
+}

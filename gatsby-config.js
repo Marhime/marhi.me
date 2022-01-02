@@ -1,9 +1,10 @@
 module.exports = {
   siteMetadata: {
-    siteUrl: "https://www.yourdomain.tld",
+    siteUrl: "https://www.marhi.me",
     title: "marhime",
   },
   plugins: [
+    `gatsby-plugin-transition-link`,
     "gatsby-plugin-sass",
     {
       resolve: "gatsby-plugin-google-analytics",
@@ -38,6 +39,19 @@ module.exports = {
         path: "./src/pages/",
       },
       __key: "pages",
+    },
+    {
+      resolve: `gatsby-plugin-webfonts`,
+      options: {
+        fonts: {
+          google: [
+            {
+              family: "Raleway",
+              variants: ["400", "600", "700", "900"],
+            },
+          ],
+        },
+      },
     },
   ],
 };
