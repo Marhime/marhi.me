@@ -129,7 +129,6 @@
 
 section {
   padding: 113px 20px 100px;
-  overflow: hidden;
 }
 
 .section-content {
@@ -147,6 +146,14 @@ section {
 }
 
 @include desktop {
+  .section-content {
+    margin-left: auto;
+    margin-right: auto;
+    width: 998px;
+  }
+}
+
+@include desktopXL {
   .section-content {
     margin-left: auto;
     margin-right: auto;

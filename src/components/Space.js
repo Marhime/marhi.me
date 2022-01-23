@@ -40,9 +40,9 @@ CameraControls.install({ THREE: THREE });
 //   return null;
 // }
 
-const Planet = forwardRef((props, ref) => {
-  const rotationX = useControl("Rotation X", { type: "number" });
-  const positionX = useControl("Rotation X", { type: "number" });
+const Object = forwardRef((props, ref) => {
+  const objectsDistance = 4;
+
   // passing the ref to a DOM element,
   // so that the parent has a reference to the DOM node
   // useFrame(() => {
@@ -51,12 +51,12 @@ const Planet = forwardRef((props, ref) => {
   // });
 
   return (
-    <mesh rotation-x={rotationX} position-x={positionX} ref={ref}>
-      <meshStandardMaterial attach="material" color={"orange"} />
-      <sphereBufferGeometry
+    <mesh ref={ref}>
+      <meshNormalMaterial attach="material" color={"#8F4EF4"} />
+      <torusGeometry
         attach="geometry"
-        position={{ x: 20 }}
-        args={[1, 32, 32]}
+        position={{ x: props.x, y: -objectsDistance * props.distance }}
+        args={[1, 0.4, 16, 60]}
       />
     </mesh>
   );
@@ -64,19 +64,20 @@ const Planet = forwardRef((props, ref) => {
 
 const Space = ({ setMoveInSpace, moveInSpace }) => {
   const [focus, setFocus] = useState({});
-  const planet = useRef(null);
+  const object1 = useRef(null);
+  const object2 = useRef(null);
+  const object3 = useRef(null);
   const { viewport } = useThree();
-
-  useEffect(() => {
-    setFocus(planet);
-  }, []);
+  useEffect(() => {}, []);
 
   return (
     <div id="space">
       <GuiCanvas linear camera={{ position: [0, 0, 20] }}>
-        <ambientLight />
-        <pointLight position={[10, 10, 10]} />
-        <Planet ref={planet} />
+        {/* <ambientLight />
+        <pointLight position={[10, 10, 10]} /> */}
+        {/* <Object ref={object1} x={2} distance={0} />
+        <Object ref={object2} x={-2} distance={1} />
+        <Object ref={object3} x={2} distance={2} /> */}
         {/* {moveInSpace && focus ? (
           <Controls zoom={moveInSpace} focus={focus.current.position} />
         ) : null} */}
@@ -88,7 +89,7 @@ const Space = ({ setMoveInSpace, moveInSpace }) => {
           saturation={0} // Saturation 0-1 (default=0)
           fade // Faded dots (default=false)
         /> */}
-        <Text
+        {/* <Text
           color={"#d49312"}
           fontSize={20}
           maxWidth={(viewport.width / 100) * 87.5}
@@ -107,7 +108,7 @@ const Space = ({ setMoveInSpace, moveInSpace }) => {
           la République s’enlise dans des débats sans fin, le Chancelier Suprême
           charge en secret deux Chevaliers Jedi, gardiens de la paix et de la
           justice dans la galaxie, de résoudre le conflit…
-        </Text>
+        </Text> */}
       </GuiCanvas>
     </div>
   );

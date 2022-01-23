@@ -3,10 +3,11 @@ import React, { useEffect } from "react";
 
 const Loadgo = ({ moveInSpace, setMoveInSpace }) => {
   useEffect(() => {
+    gsap.set(".loadgo .logo-letter-stroke", { y: 80 });
     const tl = gsap.timeline();
-    tl.from(".loadgo .logo-letter-stroke", {
+    tl.to(".loadgo .logo-letter-stroke", {
       duration: 1.2,
-      y: 80,
+      y: 0,
       ease: "power2.easeOut",
     })
       .to(".loadgo .logo-letter-fill span", {

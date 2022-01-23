@@ -15,3 +15,8 @@
     @content;
   }
 }
+@mixin desktopXL {
+  @media screen and (min-width: map-get($breakpoints, "desktopXL")) {
+    @content;
+  }
+}

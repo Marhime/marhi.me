@@ -2,7 +2,7 @@ import React, { useEffect, useRef } from "react";
 import { Link } from "gatsby";
 import gsap from "gsap/all";
 
-const CustomLink = ({ to, content, children }) => {
+const CustomLink = ({ to, content, children, customClass }) => {
   const linkRef = useRef(null);
   const enlargeCursor = () => {
     gsap.to(".circle-mouse-small", {
@@ -32,7 +32,11 @@ const CustomLink = ({ to, content, children }) => {
     };
   }, []);
   return (
-    <Link ref={linkRef} className="link bahouais" to={to}>
+    <Link
+      ref={linkRef}
+      className={`link ${customClass ? customClass : ""}`}
+      to={to}
+    >
       {content ? content : children}
     </Link>
   );

@@ -5,6 +5,8 @@
   align-items: center;
   padding: 40px;
   z-index: 1;
+  border-bottom: 1px solid white;
+  height: 100px;
   &-menu {
     display: flex;
     gap: calc(8 * 8px);
@@ -12,5 +14,29 @@
     font-size: 16px;
     color: #fff;
     font-weight: 600;
+  }
+
+  &-sidebar {
+    position: fixed;
+    top: 100px;
+    left: 0;
+    background-color: transparent;
+    width: 100px;
+    height: calc(100vh - 100px);
+    border-right: 0.5px solid white;
+
+    .start {
+      position: absolute;
+      display: flex;
+      bottom: 0;
+      justify-content: center;
+      align-items: center;
+      height: 100px;
+      color: white;
+      border-left: 0.5px solid white;
+      border-right: 0.5px solid white;
+      transform: rotate(90deg);
+      white-space: nowrap;
+    }
   }
 }
